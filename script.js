@@ -31,8 +31,12 @@ fetch('events.json')
             } else if (event.year === 1947) {
                     count1947++;
                     imageName = count1947 === 1 ? '1947.jpg' : '1947_1.jpg';
+            } else if (event.year === "Ultimos años") {
+                    imageName = '2026.jpg'; // Asignar manualmente la imagen para "Ultimos años"
+            } else if (event.year === "Actualidad") {
+                    imageName = '2027.jpg'; // Asignar manualmente la imagen para "Actualidad"
             } else {
-                imageName = `${event.year}.jpg`;
+                imageName = `${event.year}.jpg`; // Usar el año como nombre de la imagen
             }
 
             // Crear el HTML del evento con la imagen correspondiente
