@@ -1,0 +1,450 @@
+/* Paleta de colores */
+:root {
+    --color-primary: #2c3e50; /* Azul oscuro */
+    --color-secondary: #3498db; /* Azul claro */
+    --color-accent: #e67e22; /* Naranja */
+    --color-background: #f5f6fa; /* Gris claro */
+    --color-text: #2c3e50; /* Azul oscuro */
+    --color-white: #ffffff; /* Blanco */
+    --color-button-hover: #2980b9; /* Azul más oscuro para hover */
+    --color-gradient-start: #3498db; /* Inicio del gradiente */
+    --color-gradient-end: #2c3e50; /* Fin del gradiente */
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--color-background);
+    margin: 0;
+    padding: 20px;
+    color: var(--color-text);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar todo el contenido horizontalmente */
+}
+
+h1 {
+    text-align: center;
+    color: var(--color-primary);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    width: 100%; /* Asegurar que el título ocupe todo el ancho */
+}
+
+/* Contenedor de filtros */
+.filters {
+    text-align: center;
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: 100%; /* Asegurar que los filtros ocupen todo el ancho */
+}
+
+/* Estilos para los botones y la barra de búsqueda */
+.filters input,
+.filters button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Barra de búsqueda */
+.filters input {
+    width: 300px;
+    background-color: var(--color-white);
+    border: 2px solid var(--color-secondary);
+    color: var(--color-text);
+}
+
+.filters input::placeholder {
+    color: #95a5a6; /* Gris claro para el placeholder */
+}
+
+.filters input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 8px rgba(231, 126, 34, 0.5); /* Sombra naranja al enfocar */
+}
+
+/* Botones de filtrado */
+.filters button {
+    background: linear-gradient(45deg, var(--color-gradient-start), var(--color-gradient-end));
+    color: var(--color-white);
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filters button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.filters button:active {
+    transform: translateY(0);
+}
+
+/* Línea del tiempo */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    width: 100%; /* Asegurar que ocupe el ancho máximo */
+    margin: 0 auto;
+    padding: 20px 0;
+    min-height: 100vh; /* Asegurar que el contenedor ocupe al menos el 100% de la altura de la ventana */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar los contenedores de eventos */
+}
+
+/* Contenedores de eventos */
+.container {
+    display: flex; /* Usar flexbox para alinear imagen y contenido */
+    align-items: center; /* Centrar verticalmente el contenido y la imagen */
+    padding: 20px 40px; /* Más espacio interno */
+    position: relative;
+    width: 80%; /* Reducir el ancho para centrar mejor */
+    max-width: 800px; /* Ancho máximo para los contenedores */
+    clear: both; /* Asegura que los contenedores no se superpongan */
+    z-index: 1; /* Asegurar que los eventos estén sobre la línea */
+    margin-bottom: 40px; /* Más espacio entre eventos */
+    animation: fadeInUp 0.5s ease-out; /* Animación de entrada */
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo con transparencia */
+    border-radius: 15px; /* Bordes más redondeados */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ajustar la posición de la imagen en contenedores izquierda y derecha */
+.container.left {
+    flex-direction: row; /* Imagen a la izquierda, contenido a la derecha */
+}
+
+.container.right {
+    flex-direction: row-reverse; /* Imagen a la derecha, contenido a la izquierda */
+}
+
+/* Estilos para las imágenes de los eventos */
+.event-image {
+    width: 200px; /* Ancho fijo para las imágenes */
+    height: auto; /* Mantener la proporción de la imagen */
+    border-radius: 10px; /* Bordes redondeados */
+    margin: 20px; /* Espacio alrededor de la imagen */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+.event-image:hover {
+    transform: scale(1.05); /* Efecto de escala al pasar el mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más intensa al pasar el mouse */
+}
+
+/* Contenido de los eventos */
+.content {
+    flex: 1; /* El contenido ocupa el espacio restante */
+    padding: 25px 30px; /* Más espacio interno */
+    background-color: transparent; /* Fondo transparente */
+    border-radius: 15px; /* Bordes más redondeados */
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+.content:hover {
+    transform: scale(1.03); /* Efecto de escala más sutil */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más intensa al pasar el mouse */
+    background-color: rgba(245, 246, 250, 0.9); /* Cambiar fondo al pasar el mouse */
+    color: var(--color-primary); /* Cambiar color del texto al pasar el mouse */
+}
+
+/* Instrucciones para el mapa */
+.map-instructions {
+    text-align: center; /* Centrar el texto */
+    margin: 20px auto; /* Espacio arriba y abajo */
+    padding: 10px; /* Espacio interno */
+    background-color: var(--color-white); /* Fondo blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    width: 80%; /* Ancho del contenedor */
+    max-width: 600px; /* Ancho máximo */
+    font-size: 1.1rem; /* Tamaño de fuente */
+    color: var(--color-primary); /* Color del texto */
+}
+
+.map-instructions p {
+    margin: 0; /* Eliminar margen predeterminado */
+}
+
+/* Mapa interactivo */
+#map {
+    height: 400px;
+    width: 80%;
+    margin: 20px auto;
+    border-radius: 15px; /* Bordes más redondeados */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+    transition: transform 0.3s ease;
+}
+
+#map:hover {
+    transform: scale(1.03); /* Efecto de escala más sutil */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más intensa al pasar el mouse */
+}
+
+/* Estilos para el Cuadro Comparativo */
+:root {
+    --color-white: #ffffff;
+    --color-primary: #1a73e8;
+    --color-accent: #13043d;
+    --color-background: #f5f5f5;
+}
+
+#cuadro-comparativo {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: var(--color-white);
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+#cuadro-comparativo h2 {
+    text-align: center;
+    color: var(--color-primary);
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+/* Estilos para la tabla */
+.table-container {
+    overflow-x: auto; /* Permite desplazamiento horizontal en pantallas pequeñas */
+    margin: 20px 0;
+    padding: 10px;
+    background-color: var(--color-white);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: bold;
+}
+
+tr:hover {
+    background-color: var(--color-background);
+    transition: background-color 0.3s ease;
+}
+
+td ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+td ul li {
+    margin-bottom: 5px;
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    th, td {
+        padding: 8px;
+    }
+
+    .table-container {
+        width: 95%;
+    }
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Cambiar a disposición vertical en móviles */
+        width: 90%; /* Ajustar el ancho en dispositivos móviles */
+        padding-left: 20px; /* Reducir el padding izquierdo */
+        padding-right: 20px; /* Reducir el padding derecho */
+    }
+
+    .event-image {
+        width: 100%; /* Imagen ocupa todo el ancho en móviles */
+        margin: 10px 0; /* Reducir el margen en móviles */
+    }
+
+    .container.left,
+    .container.right {
+        flex-direction: column; /* Imagen arriba, contenido abajo en móviles */
+    }
+
+    h1 {
+        font-size: 2rem; /* Reducir el tamaño del título */
+    }
+}
+
+.highlight {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+}
+
+
+/*----------------------------------------------------------------------------------------*/
+/* Estilos para el carrusel */
+.galeria-presidentes {
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.galeria-presidentes img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--color-accent);
+    margin: 0 auto; /* Centrar las imágenes */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galeria-presidentes img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para los puntos de navegación */
+.slick-dots {
+    bottom: -30px;
+}
+
+.slick-dots li button:before {
+    color: var(--color-primary);
+}
+
+.slick-dots li.slick-active button:before {
+    color: var(--color-accent);
+}
+
+/* Flechas de navegación */
+.slick-prev,
+.slick-next {
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    z-index: 1;
+    transition: background-color 0.3s ease;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+    background-color: var(--color-accent);
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: var(--color-white);
+    font-size: 24px;
+    opacity: 1; /* Asegura que el ícono sea visible */
+}
+
+.slick-prev {
+    left: -50px; /* Posición de la flecha izquierda */
+}
+
+.slick-next {
+    right: -50px; /* Posición de la flecha derecha */
+}
+/*-----------------------------------------------------------*/
+/* Estilos para la sección de fuentes */
+#fuentes {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: var(--color-white);
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+#fuentes h2 {
+    text-align: center;
+    color: var(--color-primary);
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#fuentes ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#fuentes ul li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: var(--color-text);
+}
+
+#fuentes ul li a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#fuentes ul li a:hover {
+    color: var(--color-accent);
+}
+
+/* Estilos para la sección del creator */
+.creator-info {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: var(--color-white);
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.creator-info img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid var(--color-accent);
+    margin-bottom: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.creator-info img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.creator-info p {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: var(--color-accent);
+}
+
+.creator-info p strong {
+    color: var(--color-accent);
+}

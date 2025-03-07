@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Línea del Tiempo: Antecedentes de la Globalización</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- archivos CSS de Slick Carousel -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+</head>
+<body>
+    <h1>Línea del Tiempo: Antecedentes de la Globalización (1929 - Actualidad)</h1>
+    <div class="filters">
+        <!-- Barra de búsqueda -->
+        <input type="text" id="search" placeholder="Buscar eventos...">
+        
+        <!-- Botones de filtrado por décadas -->
+        <button data-decade="1920">1920s</button>
+        <button data-decade="1930">1930s</button>
+        <button data-decade="1940">1940s</button>
+        <button data-decade="1950">1950s</button>
+        <button data-decade="1960">1960s</button>
+        <button data-decade="1970">1970s</button>
+        <button data-decade="1980">1980s</button>
+        <button data-decade="1990">1990s</button>
+        <button data-decade="2000">2000s</button>
+        <button data-decade="2020">2020s</button>
+        
+        <!-- Botones de filtrado por temas -->
+        <button data-theme="Crisis económicas">Crisis económicas</button>
+        <button data-theme="Instituciones globales">Instituciones globales</button>
+        <button data-theme="Tratados comerciales">Tratados comerciales</button>
+        <button data-theme="Eventos políticos">Eventos políticos</button>
+        <button data-theme="Crisis sanitarias">Crisis sanitarias</button>
+        <button data-theme="Tecnología">Tecnología</button>
+        
+        <!-- Botón para exportar a PDF y PNG -->
+        <button id="export-pdf">Exportar a PDF</button>
+        <button id="export-timeline-png">Exportar Línea del Tiempo a PNG</button>
+        <button id="export-table-png">Exportar Cuadro Comparativo a PNG</button>
+        
+        <!-- Botón para mostrar todos los eventos -->
+        <button id="show-all">Mostrar Todo</button>
+    </div>
+
+    <!-- Contenedor de la línea del tiempo -->
+    <div class="timeline"></div>
+
+    <!-- Instrucciones para el mapa -->
+    <div class="map-instructions">
+        <p>🗺️ Selecciona una ubicación en el mapa para ver los detalles del evento.</p>
+    </div>
+
+    <!-- Mapa interactivo -->
+    <div id="map"></div>
+
+
+<!-- Sección del Cuadro Comparativo de Modelos Económicos -->
+<section id="cuadro-comparativo">
+    <h2>Cuadro Comparativo de Modelos Económicos Contemporáneos</h2>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Criterios</th>
+                    <th>Sustitución de Importaciones (1940-1952)</th>
+                    <th>Desarrollo Estabilizador (1952-1970)</th>
+                    <th>Desarrollo Compartido (1970-1982)</th>
+                    <th>Neoliberalismo (1982-2000)</th>
+                    <th>Globalización (2000-Actualidad)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Análisis general</td>
+                    <td>Fue una etapa de industrialización acelerada, pero con limitaciones en competitividad internacional.</td>
+                    <td>Logró un crecimiento económico sostenido y estabilidad macroeconómica, pero con un enfoque proteccionista.</td>
+                    <td>Intentó redistribuir el ingreso, pero generó inflación y endeudamiento excesivo.</td>
+                    <td>Promovió la apertura económica y la reducción del Estado, pero aumentó la desigualdad y la pobreza.</td>
+                    <td>Ha integrado a México en la economía global, con avances tecnológicos, pero persisten desafíos en equidad y acceso a la tecnología.</td>
+                </tr>
+                <tr>
+                    <td>Objetivo principal</td>
+                    <td>Industrializar el país y reducir la dependencia de importaciones.</td>
+                    <td>Mantener estabilidad macroeconómica con crecimiento sostenido.</td>
+                    <td>Promover una mayor equidad en la distribución del ingreso.</td>
+                    <td>Reducir la intervención del Estado en la economía y fomentar el libre mercado.</td>
+                    <td>Integración de México a la economía global y expansión del comercio digital.</td>
+                </tr>
+                <tr>
+                    <td>Políticas económicas</td>
+                    <td>
+                        <ul>
+                            <li><strong>Fiscal:</strong> Aranceles altos y subsidios a la industria, inversión en infraestructura.</li>
+                            <li><strong>Monetaria:</strong> Control de inflación con tasas de interés administradas, créditos preferenciales a la industria y sector agropecuario.</li>
+                            <li><strong>Comercial:</strong> Permisos previos para importaciones, fomentando la producción nacional.</li>
+                            <li><strong>Agropecuaria:</strong> Precios de garantía para productos agrícolas.</li>
+                            <li><strong>Salarial:</strong> Salarios bajos para incentivar la inversión industrial.</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li><strong>Fiscal:</strong> Control del déficit público y estabilidad cambiaria con tipo de cambio fijo.</li>
+                            <li><strong>Monetaria:</strong> Control estricto de la inflación y fomento del ahorro interno.</li>
+                            <li><strong>Comercial:</strong> Proteccionismo industrial para fortalecer empresas nacionales.</li>
+                            <li><strong>Agropecuaria:</strong> Créditos preferenciales al campo, aunque con menor importancia frente a la industria.</li>
+                            <li><strong>Salarial:</strong> Salarios estables con incrementos moderados.</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li><strong>Fiscal:</strong> Expansión del gasto público para infraestructura y servicios sociales, provocando endeudamiento.</li>
+                            <li><strong>Monetaria:</strong> Política expansiva que generó inflación.</li>
+                            <li><strong>Comercial:</strong> Nacionalización de sectores estratégicos como la banca y el petróleo.</li>
+                            <li><strong>Agropecuaria:</strong> Aumento de salarios para mejorar el poder adquisitivo, pero insostenible por la inflación.</li>
+                            <li><strong>Salarial:</strong> Fomento a la inversión extranjera con altos niveles de endeudamiento.</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li><strong>Fiscal:</strong> Reducción del gasto público y privatización de empresas estatales.</li>
+                            <li><strong>Monetaria:</strong> Libre flotación del peso tras la crisis de 1994.</li>
+                            <li><strong>Comercial:</strong> Apertura de mercados, eliminación de barreras arancelarias con la firma del TLCAN.</li>
+                            <li><strong>Agropecuaria:</strong> Flexibilización del empleo, promoviendo contratos temporales.</li>
+                            <li><strong>Salarial:</strong> Creación del Fobaproa para rescatar bancos en crisis.</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li><strong>Fiscal:</strong> Expansión del comercio digital y atracción de inversión extranjera.</li>
+                            <li><strong>Monetaria:</strong> Fomento de nuevas tecnologías y criptomonedas.</li>
+                            <li><strong>Comercial:</strong> Firma de acuerdos como el T-MEC, fortaleciendo la economía digital.</li>
+                            <li><strong>Agropecuaria:</strong> Crecimiento del teletrabajo y digitalización del empleo.</li>
+                            <li><strong>Salarial:</strong> Regulaciones globales para combatir el cambio climático.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Resultados económicos</td>
+                    <td>Crecimiento industrial acelerado, falta de competitividad internacional, dependencia de insumos importados.</td>
+                    <td>Crecimiento del PIB 6.7% anual, baja inflación (4.9% promedio), tipo de cambio fijo.</td>
+                    <td>Crisis de deuda, inflación del 98.8% en 1982, endeudamiento externo de 58,874 millones de dólares, crisis económica y devaluación.</td>
+                    <td>Crecimiento desigual, aumento de la pobreza, concentración de riqueza, dependencia de inversiones extranjeras.</td>
+                    <td>Expansión de la economía digital, mayor acceso a tecnología, pero desigualdad en sectores vulnerables.</td>
+                </tr>
+                <tr>
+                    <td>Impacto social</td>
+                    <td>Migración del campo a la ciudad, desigualdad en el acceso a bienes y servicios.</td>
+                    <td>Expansión del consumo y acceso a bienes básicos, estabilidad social relativa.</td>
+                    <td>Aumento de pobreza y desempleo, desigualdad social.</td>
+                    <td>Aumento de la informalidad laboral, precarización del empleo, pérdida de derechos laborales.</td>
+                    <td>Crecimiento del sector digital, pero exclusión de sectores sin acceso a tecnología.</td>
+                </tr>
+                <tr>
+                    <td>Presidentes clave</td>
+<td>
+  <ul>
+    <li><strong>1940-1946:</strong> Manuel Ávila Camacho</li>
+    <li><strong>1946-1952:</strong> Miguel Alemán Valdés</li>
+  </ul>
+</td>
+<td>
+  <ul>
+    <li><strong>1952-1958:</strong> Adolfo Ruiz Cortines</li>
+    <li><strong>1958-1964:</strong> Adolfo López Mateos</li>
+    <li><strong>1964-1970:</strong> Gustavo Díaz Ordaz</li>
+  </ul>
+</td>
+<td>
+  <ul>
+    <li><strong>1970-1976:</strong> Luis Echeverría Álvarez</li>
+    <li><strong>1976-1982:</strong> José López Portillo</li>
+  </ul>
+</td>
+<td>
+  <ul>
+    <li><strong>1982-1988:</strong> Miguel de la Madrid Hurtado</li>
+    <li><strong>1988-1994:</strong> Carlos Salinas de Gortari</li>
+    <li><strong>1994-2000:</strong> Ernesto Zedillo Ponce de León</li>
+  </ul>
+</td>
+<td>
+  <ul>
+    <li><strong>2000-2006:</strong> Vicente Fox Quesada</li>
+    <li><strong>2006-2012:</strong> Felipe Calderón Hinojosa</li>
+    <li><strong>2012-2018:</strong> Enrique Peña Nieto</li>
+    <li><strong>2018-2024:</strong> Andrés Manuel López Obrador</li>
+    <li><strong>2024-2030:</strong> Claudia Sheinbaum Pardo</li>
+  </ul>
+</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="galeria-presidentes">
+            <div><img src="./assets/Presidentes/manuel_avila_camacho.jpg" alt="Manuel Ávila Camacho"></div>
+            <div><img src="./assets/Presidentes/miguel_aleman_valdes.jpg" alt="Miguel Alemán Valdés"></div>
+            <div><img src="./assets/Presidentes/adolfo_ruiz_cortines.jpg" alt="Adolfo Ruiz Cortines"></div>
+            <div><img src="./assets/Presidentes/adolfo_lopez_mateos.jpg" alt="Adolfo López Mateos"></div>
+            <div><img src="./assets/Presidentes/gustavo_diaz_ordaz.jpg" alt="Gustavo Díaz Ordaz"></div>
+            <div><img src="./assets/Presidentes/luis_echeverria_alvarez.jpg" alt="Luis Echeverría Álvarez"></div>
+            <div><img src="./assets/Presidentes/jose_lopez_portillo.jpg" alt="José López Portillo"></div>
+            <div><img src="./assets/Presidentes/miguel_de_la_madrid_hurtado.jpg" alt="Miguel de la Madrid Hurtado"></div>
+            <div><img src="./assets/Presidentes/carlos_salinas_de_gortari.jpg" alt="Carlos Salinas de Gortari"></div>
+            <div><img src="./assets/Presidentes/ernesto_zedillo_ponce_de_leon.jpg" alt="Ernesto Zedillo Ponce de León"></div>
+            <div><img src="./assets/Presidentes/vicente_fox_quesada.jpg" alt="Vicente Fox Quesada"></div>
+            <div><img src="./assets/Presidentes/felipe_calderon_hinojosa.jpg" alt="Felipe Calderón Hinojosa"></div>
+            <div><img src="./assets/Presidentes/enrique_pena_nieto.jpg" alt="Enrique Peña Nieto"></div>
+            <div><img src="./assets/Presidentes/andres_manuel_lopez_obrador.jpg" alt="Andrés Manuel López Obrador"></div>
+            <div><img src="./assets/Presidentes/claudia_sheinbaum_pardo.jpg" alt="Claudia Sheinbaum Pardo"></div>
+        </div>
+<!-- Sección de Fuentes -->
+<section id="fuentes">
+    <h2>Fuentes en Formato APA 7ma Edición</h2>
+    <ul>
+        <li>Alba, L., Lins, E., & Mathews, R. (2015). <i>La globalización desde abajo: La otra economía mundial</i>. COLMEX-FCE.</li>
+        <li>Chossudovsky, M. (2003). <i>Globalización de la pobreza y nuevo orden mundial</i>. Siglo XXI-UNAM.</li>
+        <li>Reder, M. (2012). <i>Globalización y filosofía</i>. Herder.</li>
+        <li>Salazar, F. (2004). <i>Globalización y política neoliberal en México</i>. Universidad Autónoma Metropolitana.</li>
+        <li>Secretaría de Economía. (s.f.). <i>Historia económica de México y su evolución</i>. Gobierno de México. Recuperado de <a href="https://www.economia.gob.mx/datamexico/es/">https://www.economia.gob.mx/datamexico/es/</a></li>
+        <li>FMI. (2023). <i>Impacto de la globalización en las economías emergentes</i>. Fondo Monetario Internacional. Recuperado de <a href="https://www.imf.org/es/Publications">https://www.imf.org/es/Publications</a></li>
+    </ul>
+</section>
+
+<!-- Sección del Creator -->
+<div class="creator-info">
+    <img src="./assets/creator/JRSA.jpg" alt="José Ricardo Sánchez Aguas">
+    <p><strong>Matrícula:</strong> ES251112064</p>
+    <p><strong>Correo institucional:</strong> jose.sanchez25LMT@nube.unadmexico.mx</p>
+    <p><strong>Universidad:</strong> UNIVERSIDAD ABIERTA Y A DISTANCIA DE MÉXICO</p>
+    <p><strong>Facultad:</strong> CIENCIAS EXACTAS, INGENIERÍA Y TECNOLOGÍA</p>
+    <p><strong>Carrera:</strong> MATEMÁTICAS</p>
+    <p><strong>Materia:</strong> CONTEXTO SOCIOECONÓMICO DE MÉXICO</p>
+    <p><strong>Grupo:</strong> MT-MCSM-2501-B1-001</p>
+</div>
+</section>
+    <!-- JS de Slick Carousel -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- Librerías JavaScript -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <!-- Script personalizado -->
+    <script src="script.js"></script>
+</body>
+</html>

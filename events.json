@@ -1,0 +1,214 @@
+[
+    {
+        "year": 1929,
+        "title": "Gran Depresión",
+        "description": "Colapso de la economía mundial tras la caída de la bolsa en EE.UU., lo que llevó a la búsqueda de nuevas políticas económicas internacionales.",
+        "theme": "Crisis económicas",
+        "coords": [37.0902, -95.7129]  
+
+    },
+    {
+        "year": 1933,
+        "title": "New Deal en Estados Unidos",
+        "description": "El presidente Franklin D. Roosevelt implementó el New Deal, un conjunto de programas para recuperar la economía estadounidense tras la Gran Depresión, influyendo en políticas económicas globales.",
+        "theme": "Crisis económicas",
+        "coords": [38.9072, -77.0369]
+    },
+    {
+        "year": 1944,
+        "title": "Creación del FMI y el Banco Mundial",
+        "description": "Se establecen estas instituciones en Bretton Woods para regular la economía global y evitar crisis financieras.",
+        "theme": "Instituciones globales",
+        "coords": [43.3616, -71.0574]
+    },
+    {
+        "year": 1945,
+        "title": "Fundación de la ONU",
+        "description": "Surge la Organización de las Naciones Unidas para promover la cooperación internacional y la paz mundial.",
+        "theme": "Instituciones globales",
+        "coords": [40.7128, -74.0060]
+    },
+    {
+        "year": 1947,
+        "title": "Inicio de la Guerra Fría",
+        "description": "Comienza con la Doctrina Truman y la creación del Plan Marshall, marcando la confrontación entre EE.UU. y la URSS a nivel global.",
+        "theme": "Eventos políticos",
+        "coords": [38.9072, -77.0369]
+    },
+    {
+        "year": 1947,
+        "title": "Acuerdo General sobre Aranceles Aduaneros y Comercio (GATT)",
+        "description": "Primer paso hacia la liberalización del comercio internacional.",
+        "theme": "Tratados comerciales",
+        "coords": [46.8182, 8.2275]
+    },
+    {
+        "year": 1957,
+        "title": "Tratado de Roma",
+        "description": "Se firmó el Tratado de Roma, que estableció la Comunidad Económica Europea (CEE), un paso crucial hacia la integración económica en Europa.",
+        "theme": "Tratados comerciales",
+        "coords": [41.9028, 12.4964]
+    },
+    {
+        "year": 1962,
+        "title": "Crisis de los Misiles en Cuba",
+        "description": "La confrontación entre EE.UU. y la URSS durante la Crisis de los Misiles en Cuba marcó un punto crítico en la Guerra Fría y tuvo implicaciones globales.",
+        "theme": "Eventos políticos",
+        "coords": [23.1136, -82.3666]
+    },
+    {
+        "year": 1969,
+        "title": "Creación de ARPANET",
+        "description": "Inicio del desarrollo de internet, tecnología que revolucionará la globalización y las telecomunicaciones.",
+        "theme": "Tecnología",
+        "coords": [37.7749, -122.4194]
+    },
+    {
+        "year": 1971,
+        "title": "Fin del Patrón Oro",
+        "description": "EE.UU. abandona el respaldo del dólar en oro, iniciando la era de las monedas flotantes.",
+        "theme": "Crisis económicas",
+        "coords": [38.9072, -77.0369]
+    },
+    {
+        "year": 1982,
+        "title": "Crisis de la deuda en América Latina",
+        "description": "México y otros países en desarrollo enfrentan problemas financieros, acelerando la adopción del neoliberalismo.",
+        "theme": "Crisis económicas",
+        "coords": [23.6345, -102.5528]
+    },
+    {
+        "year": 1989,
+        "title": "Consenso de Washington y caida del muro de Berlin.",
+        "description": "Conjunto de políticas económicas promovidas por el FMI y el Banco Mundial para impulsar el libre mercado.",
+        "theme": "Instituciones globales",
+        "coords": [38.9072, -77.0369]
+    },
+    {
+        "year": 1991,
+        "title": "Fin de la Guerra Fría",
+        "description": "Caida y disolución de la URSS. Se consolida el capitalismo y la globalización como modelo dominante.",
+        "theme": "Eventos políticos",
+        "coords": [55.7558, 37.6176]
+    },
+    {
+        "year": 1994,
+        "title": "Firma del TLCAN",
+        "description": "Tratado entre México, EE.UU. y Canadá que elimina barreras comerciales.",
+        "theme": "Tratados comerciales",
+        "coords": [23.6345, -102.5528]
+    },
+    {
+        "year": 1995,
+        "title": "Creación de la OMC",
+        "description": "Organización Mundial del Comercio sustituye al GATT, regulando el comercio global.",
+        "theme": "Instituciones globales",
+        "coords": [46.8182, 8.2275]
+    },
+    {
+        "year": 2001,
+        "title": "Ingreso de China a la OMC",
+        "description": "Se convierte en la 'fábrica del mundo', redefiniendo el comercio global.",
+        "theme": "Tratados comerciales",
+        "coords": [35.8617, 104.1954]
+    },
+    {
+        "year": 2004,
+        "title": "Expansión del acceso a internet",
+        "description": "Crecimiento de las Tecnologías de la Información y Comunicación (TICs), facilitando el comercio digital y la globalización cultural.",
+        "theme": "Tecnología",
+        "coords": [37.7749, -122.4194]
+    },
+    {
+        "year": 2008,
+        "title": "Crisis financiera mundial",
+        "description": "Quiebra de Lehman Brothers, lo que evidencia la fragilidad del sistema financiero global.",
+        "theme": "Crisis económicas",
+        "coords": [40.7128, -74.0060]
+    },
+    {
+        "year": 2010,
+        "title": "Auge de redes sociales",
+        "description": "Facebook y Twitter transforman la comunicación global, impactando en movimientos sociales y en el comercio digital.",
+        "theme": "Tecnología",
+        "coords": [37.7749, -122.4194]
+    },
+    {
+        "year": 2016,
+        "title": "Brexit",
+        "description": "Reino Unido vota por salir de la Unión Europea, reflejando tensiones contra la globalización.",
+        "theme": "Eventos políticos",
+        "coords": [51.5074, -0.1278]
+    },
+    {
+        "year": 2020,
+        "title": "Pandemia de COVID-19",
+        "description": "Interrupción de las cadenas de suministro y digitalización acelerada de la economía.",
+        "theme": "Crisis sanitarias",
+        "coords": [30.9756, 112.2707]
+    },
+    {
+        "year": 2021,
+        "title": "Crisis de microchips",
+        "description": "Escasez global de semiconductores afecta industrias tecnológicas y automotrices.",
+        "theme": "Crisis económicas",
+        "coords": [37.7749, -122.4194]
+    },
+    {
+        "year": 2022,
+        "title": "Guerra en Ucrania",
+        "description": "Impacto en la economía mundial con sanciones y crisis energética.",
+        "theme": "Eventos políticos",
+        "coords": [48.3794, 31.1656]
+    },
+    {
+        "year": 2023,
+        "title": "Avance de la Inteligencia Artificial",
+        "description": "Transformación del mercado laboral y la economía global.",
+        "theme": "Tecnología",
+        "coords": [37.7749, -122.4194]
+    },
+    {
+        "year": 2023,
+        "title": "Crecimiento del nearshoring en México",
+        "description": "Empresas trasladan producción a México por su cercanía con EE.UU.",
+        "theme": "Tratados comerciales",
+        "coords": [23.6345, -102.5528]
+    },
+    {
+        "year": 2024,
+        "title": "Tensión comercial EE.UU.-China",
+        "description": "Rivalidad tecnológica y política que impacta el comercio internacional.",
+        "theme": "Tratados comerciales",
+        "coords": [35.8617, 104.1954]
+    },
+    {
+        "year": 2024,
+        "title": "Auge de las criptomonedas",
+        "description": "Mayor adopción de Bitcoin y otras criptodivisas como alternativa financiera.",
+        "theme": "Tecnología",
+        "coords": [37.7749, -122.4194]
+    },
+    {
+        "year": 2025,
+        "title": "Regulación global del comercio digital",
+        "description": "Países establecen normas sobre impuestos y privacidad en el comercio en línea.",
+        "theme": "Tecnología",
+        "coords": [46.8182, 8.2275]
+    },
+    {
+        "year": 2026,
+        "title": "Expansión de centros comerciales y cultura global en Zumpango",
+        "description": "La llegada de cadenas comerciales como Walmart en el centro comercial town center (17 de septiembre de 2010) y la Bodega Aurrerá en Paseos de San Juan (2015) refleja la globalización económica, transformando hábitos de consumo y desplazando pequeños negocios locales.",
+        "theme": "Impacto local",
+        "coords": [19.7978, -99.1009]
+    },
+    {
+        "year": 2027,
+        "title": "Impacto cultural en Zumpango - Expansión de plataformas digitales",
+        "description": "Redes sociales y servicios de streaming han influido en la cultura local, cambiando los hábitos de entretenimiento y comunicación entre generaciones jóvenes.",
+        "theme": "Impacto local",
+        "coords": [19.7978, -99.1009]
+    }
+
+]
