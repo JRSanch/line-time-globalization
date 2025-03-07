@@ -273,36 +273,123 @@ td ul li {
 
 /* Estilos para pantallas pequeñas */
 @media (max-width: 768px) {
-    th, td {
-        padding: 8px;
+    body {
+        padding: 10px;
     }
 
-    .table-container {
-        width: 95%;
+    h1 {
+        font-size: 2rem;
     }
-}
 
-/* Diseño responsivo */
-@media (max-width: 768px) {
+    .filters {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .filters input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .filters button {
+        width: 100%;
+    }
+
+    .timeline {
+        padding: 10px 0;
+    }
+
     .container {
-        flex-direction: column; /* Cambiar a disposición vertical en móviles */
-        width: 90%; /* Ajustar el ancho en dispositivos móviles */
-        padding-left: 20px; /* Reducir el padding izquierdo */
-        padding-right: 20px; /* Reducir el padding derecho */
+        width: 100%;
+        padding: 10px;
+        flex-direction: column;
     }
 
     .event-image {
-        width: 100%; /* Imagen ocupa todo el ancho en móviles */
-        margin: 10px 0; /* Reducir el margen en móviles */
+        width: 100%;
+        margin: 10px 0;
     }
 
     .container.left,
     .container.right {
-        flex-direction: column; /* Imagen arriba, contenido abajo en móviles */
+        flex-direction: column;
     }
 
+    .content {
+        padding: 10px;
+    }
+
+    .map-instructions {
+        width: 100%;
+    }
+
+    #map {
+        width: 100%;
+        height: 300px;
+    }
+
+    .galeria-presidentes img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .slick-prev {
+        left: -20px;
+    }
+
+    .slick-next {
+        right: -20px;
+    }
+
+    .creator-info img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .table-container {
+        width: 100%;
+        padding: 5px;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
     h1 {
-        font-size: 2rem; /* Reducir el tamaño del título */
+        font-size: 1.5rem;
+    }
+
+    .filters input,
+    .filters button {
+        font-size: 0.9rem;
+    }
+
+    .container {
+        padding: 5px;
+    }
+
+    .event-image {
+        margin: 5px 0;
+    }
+
+    .content {
+        padding: 5px;
+    }
+
+    .galeria-presidentes img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .creator-info img {
+        width: 80px;
+        height: 80px;
     }
 }
 
@@ -310,7 +397,6 @@ td ul li {
     background-color: var(--color-accent);
     color: var(--color-white);
 }
-
 
 /*----------------------------------------------------------------------------------------*/
 /* Estilos para el carrusel */
